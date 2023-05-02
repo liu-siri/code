@@ -1,0 +1,64 @@
+#include<stdio.h>
+int main()
+{
+	int i=0,eq=0,sum=0,re=0;
+	char ch=0;
+	int arr[]={0};
+	scanf("%c",&ch);
+	eq=ch-'0';
+	arr[0]=eq;
+	getchar();
+	for(i=1;i<4;i++)
+	{
+		scanf("%c",&ch);
+		eq=ch-'0';
+		arr[i]=eq;
+	}
+	getchar();
+	for(i=4;i<9;i++)
+	{
+		scanf("%c",&ch);
+		eq=ch-'0';
+		arr[i]=eq;
+	}
+	getchar();
+	for(i=0;i<9;i++)
+	{
+		sum=arr[i]*(i+1);
+	}
+	re=sum%11;
+	if(re==10)
+	{
+		re='X'-'0';
+	}
+	scanf("%c",&ch);
+	eq=ch-'0';
+	if(re==eq)
+	{
+		printf("Right");
+	}
+	else
+	{
+		printf("%d",arr[0]);
+		printf("-");
+		for(i=1;i<4;i++)
+		{
+			printf("%d",arr[i]);
+		}
+		printf("-");
+		for(i=4;i<9;i++)
+		{
+			printf("%d",arr[i]);
+		}
+		printf("-");
+		if(re>=0&&re<=9)
+		{	
+			printf("%d",re);
+		}
+		if(re=='X'-'0')
+		{
+			printf("X");
+		}
+	}
+	return 0;
+}

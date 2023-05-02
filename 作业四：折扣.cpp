@@ -1,0 +1,43 @@
+#include<stdio.h>
+int main()
+{
+	int total=0,t=0,line=0,n=0,price=0,sum=0;
+	scanf("%d",&total);
+	getchar();
+	for(t=0;t<total;t++)
+	{
+		sum=0;
+		scanf("%d",&line);
+		getchar();
+		for(n=0;n<line;n++)
+		{
+			scanf("%d",&price);
+			getchar();
+			sum+=price;
+		}
+		if(sum>=0&&sum<100)
+			printf("%d",sum);
+		if(sum>=100&&sum<200)
+		{
+			sum-=30;
+			printf("%d",sum);
+		}
+		if(sum>=200&&sum<300)
+		{
+			sum-=70;
+			printf("%d",sum);
+		}
+		if(sum>=300&&sum<400)
+		{
+			sum-=110;
+			printf("%d",sum);
+		}
+		if(sum>=400&&sum<500)
+		{
+			sum-=160;
+			printf("%d",sum);
+		}
+		getchar();
+	}
+	return 0;
+}
